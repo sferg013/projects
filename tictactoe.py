@@ -6,8 +6,7 @@ def TicTT(L,cnt):
     for j in range(len(L)):
         print(L[j])
     print("player 1: ")
-    a=int(input("Player 1 First coord"))
-    b=int(input("Player 1 second coord"))
+    a,b=coords(L,1)
 
     L[a][b]=1
     if win(L):
@@ -15,8 +14,7 @@ def TicTT(L,cnt):
     #for k in range(len(L)):
      #   print(L[k])
     print("player 2: ")
-    c=int(input("Player 2 first coord"))
-    d=int(input("Player 2 second coord"))
+    c,d=coords(L,2)
 
     L[c][d]=2
     if win(L):
@@ -24,6 +22,16 @@ def TicTT(L,cnt):
         
     cnt=cnt+1
     TicTT(L,cnt)
+def coords(L,n):
+    x=int(input("Player "+str(n) +" First coord"))
+    y=int(input("Player "+str(n) +" second coord"))
+    if L[x][y]==0:
+        return(x,y)
+    else:
+        print("try again")
+    return coords(L,n)
+
+
     #for m in range(len(L)):
      #   print(L[m])
     #winning cases: exact points = true but want more effecent less lines of code
