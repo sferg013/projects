@@ -42,6 +42,26 @@ def TicTT(L,cnt):
             for j in range(len(L)):
                 print(L[j])
             return None
+        elif L[0][0]==1 and L[1][1]==1 and L[2][2]==1:
+            print("player 1 wins")
+            for j in range(len(L)):
+                print(L[j])
+            return None
+        elif L[0][0]==2 and L[1][1]==2 and L[2][2]==2:
+            print("player 2 wins")
+            for j in range(len(L)):
+                print(L[j])
+            return None
+        elif L[0][2]==1 and L[1][1]==1 and L[2][0]==1:
+            print("player 1 wins")
+            for j in range(len(L)):
+                print(L[j])
+            return None
+        elif L[0][2]==2 and L[1][1]==2 and L[2][0]==2:
+            print("player 2 wins")
+            for j in range(len(L)):
+                print(L[j])
+            return None
     
     cnt=cnt+1
     TicTT(L,cnt)
