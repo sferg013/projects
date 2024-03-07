@@ -23,15 +23,24 @@ def TicTT(L,cnt):
     #winning cases: exact points = true but want more effecent less lines of code
     for i in range(3):
         if L[i][0]==1 and L[i][1]==1 and L[i][2]==1:
-            return(print("player 1 wins"))
+            print("player 1 wins")
+            for j in range(len(L)):
+                print(L[j])
+            return(None)
         elif L[i][0]==2 and L[i][1]==2 and L[i][2]==2:
             print("player 2 wins")
+            for j in range(len(L)):
+                print(L[j])
             return None
         elif L[0][i]==1 and L[1][i]==1 and L[2][i]==1:
             print("player 1 wins")
+            for j in range(len(L)):
+                print(L[j])
             return None
         elif L[0][i]==2 and L[1][i]==2 and L[2][i]==2:
             print("player 2 wins")
+            for j in range(len(L)):
+                print(L[j])
             return None
     
     cnt=cnt+1
