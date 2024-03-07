@@ -35,48 +35,25 @@ def coords(L,n):
     #for m in range(len(L)):
      #   print(L[m])
     #winning cases: exact points = true but want more effecent less lines of code
+
 def win(L):
-    for i in range(3):
-        if L[i][0]==1 and L[i][1]==1 and L[i][2]==1:
-            print("player 1 wins")
-            for j in range(len(L)):
-                print(L[j])
-            return(True)
-        elif L[i][0]==2 and L[i][1]==2 and L[i][2]==2:
-            print("player 2 wins")
-            for j in range(len(L)):
-                print(L[j])
+    for p in [1, 2]:
+        # Check rows and columns
+        for i in range(3):
+            if all(L[i][j] == p for j in range(3)) or all(L[j][i] == p for j in range(3)):
+                print(f"Player {p} wins")
+                for k in range(len(L)):
+                    print(L[k])
+                return True
+
+        # Check diagonals
+        if all(L[i][i] == p for i in range(3)) or all(L[i][2 - i] == p for i in range(3)):
+            print(f"Player {p} wins")
+            for k in range(len(L)):
+                print(L[k])
             return True
-        elif L[0][i]==1 and L[1][i]==1 and L[2][i]==1:
-            print("player 1 wins")
-            for j in range(len(L)):
-                print(L[j])
-            return True
-        elif L[0][i]==2 and L[1][i]==2 and L[2][i]==2:
-            print("player 2 wins")
-            for j in range(len(L)):
-                print(L[j])
-            return True
-        elif L[0][0]==1 and L[1][1]==1 and L[2][2]==1:
-            print("player 1 wins")
-            for j in range(len(L)):
-                print(L[j])
-            return True
-        elif L[0][0]==2 and L[1][1]==2 and L[2][2]==2:
-            print("player 2 wins")
-            for j in range(len(L)):
-                print(L[j])
-            return True
-        elif L[0][2]==1 and L[1][1]==1 and L[2][0]==1:
-            print("player 1 wins")
-            for j in range(len(L)):
-                print(L[j])
-            return True
-        elif L[0][2]==2 and L[1][1]==2 and L[2][0]==2:
-            print("player 2 wins")
-            for j in range(len(L)):
-                print(L[j])
-            return True
+
+    return False
 
 
 
