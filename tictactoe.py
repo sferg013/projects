@@ -31,9 +31,6 @@ def coords(L,n):
         print("try again")
     return coords(L,n)
 
-
-    #for m in range(len(L)):
-     #   print(L[m])
     #winning cases: exact points = true but want more effecent less lines of code
 
 def win(L):
@@ -54,8 +51,6 @@ def win(L):
             return True
 
     return False
-
-
 
 print("welcome to tic tac toe")
 L =[[0,0,0],[0,0,0],[0,0,0]]
