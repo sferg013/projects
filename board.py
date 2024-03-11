@@ -20,6 +20,7 @@ def win():
                 reset()
         if all(L[i][i] == p for i in range(3)) or all(L[i][2 - i] == p for i in range(3)):
             messagebox.showinfo(f"Player {p} wins")
+            #want better way to show this
             reset()
 
 def reset():
